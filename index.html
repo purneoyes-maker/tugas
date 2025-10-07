@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Hosting & Server</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6); }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .float-animation { animation: float 3s ease-in-out infinite; }
+        .pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
+        .slide-in { animation: slideIn 0.8s ease-out forwards; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
+        }
+        
+        .tech-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px),
+                radial-gradient(circle at 75% 75%, rgba(255,255,255,0.1) 2px, transparent 2px);
+            background-size: 50px 50px;
+        }
+        
+        .slide {
+            min-height: 100vh;
+            display: none;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        .server-icon {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            border-radius: 8px;
+            padding: 12px;
+            display: inline-block;
+        }
+        
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-xl font-bold text-blue-400">Layanan Hosting & Server</h1>
+                <div class="flex space-x-4">
+                    <button onclick="prevSlide()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">← Sebelumnya</button>
+                    <span id="slideCounter" class="px-4 py-2 bg-blue-600 rounded-lg">1 / 8</span>
+                    <button onclick="nextSlide()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors">Selanjutnya →</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Title -->
+    <div class="slide active gradient-bg tech-pattern flex items-center justify-center" id="slide1">
+        <div class="text-center max-w-4xl mx-auto px-6">
+            <div class="float-animation mb-8">
+                <svg class="w-24 h-24 mx-auto text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4zm-2-8V6a2 2 0 012-2h16a2 2 0 012 2v2H2zm0 5v-2h20v2H2zm0 5v-2h20v2H2z"/>
+                </svg>
+            </div>
+            <h1 class="text-5xl font-bold mb-6 slide-in">Memahami Layanan Penyewaan Hosting, Server, dan Virtual Server</h1>
+            <p class="text-xl text-blue-100 mb-8 slide-in">Administrasi Layanan Server</p>
+            <div class="pulse-glow bg-white/10 backdrop-blur-sm rounded-2xl p-6 inline-block">
+                <p class="text-lg">Teknologi Server Modern</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: Pengantar -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide2">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Pengantar: Hosting, Server & Virtual Server</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="comparison-card rounded-2xl p-8 text-center">
+                    <div class="server-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Hosting</h3>
+                    <p class="text-gray-300 leading-relaxed">Layanan penyewaan ruang server untuk menyimpan dan menjalankan website atau aplikasi di internet</p>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-8 text-center">
+                    <div class="server-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 3H4c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h3l-1 1v1h12v-1l-1-1h3c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H4V5h16v11z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Server</h3>
+                    <p class="text-gray-300 leading-relaxed">Komputer fisik yang menyediakan layanan, data, atau program kepada komputer lain melalui jaringan</p>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-8 text-center">
+                    <div class="server-icon w-16 h-16 mx-auto mb-6 flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 text-blue-300">Virtual Server</h3>
+                    <p class="text-gray-300 leading-relaxed">Server yang dibuat melalui virtualisasi, memungkinkan satu server fisik menjalankan beberapa server virtual</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Jenis Layanan Hosting -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide3">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Jenis-Jenis Layanan Hosting</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="comparison-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">S</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-green-400">Shared Hosting</h3>
+                    </div>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Berbagi server dengan pengguna lain</li>
+                        <li>• Harga terjangkau</li>
+                        <li>• Cocok untuk pemula</li>
+                        <li>• Resource terbatas</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">V</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-400">VPS Hosting</h3>
+                    </div>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Virtual Private Server</li>
+                        <li>• Resource dedicated</li>
+                        <li>• Kontrol lebih besar</li>
+                        <li>• Skalabilitas tinggi</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">D</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-purple-400">Dedicated Server</h3>
+                    </div>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Server fisik eksklusif</li>
+                        <li>• Performa maksimal</li>
+                        <li>• Kontrol penuh</li>
+                        <li>• Harga premium</li>
+                    </ul>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-6 hover:scale-105 transition-transform">
+                    <div class="text-center mb-4">
+                        <div class="w-12 h-12 bg-cyan-500 rounded-lg mx-auto mb-3 flex items-center justify-center">
+                            <span class="text-white font-bold">C</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-cyan-400">Cloud Hosting</h3>
+                    </div>
+                    <ul class="text-sm text-gray-300 space-y-2">
+                        <li>• Berbasis cloud computing</li>
+                        <li>• Skalabilitas otomatis</li>
+                        <li>• Keandalan tinggi</li>
+                        <li>• Pay-as-you-use</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4: Server Fisik vs Virtual -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide4">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Perbedaan Server Fisik vs Virtual Server</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="comparison-card rounded-2xl p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-orange-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-orange-400">Server Fisik</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-green-400 font-bold">✓</span>
+                            <span class="text-gray-300">Performa maksimal dan dedicated</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-green-400 font-bold">✓</span>
+                            <span class="text-gray-300">Kontrol hardware penuh</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-red-400 font-bold">✗</span>
+                            <span class="text-gray-300">Biaya tinggi untuk setup</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-red-400 font-bold">✗</span>
+                            <span class="text-gray-300">Sulit untuk scaling</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-red-400 font-bold">✗</span>
+                            <span class="text-gray-300">Maintenance fisik diperlukan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-cyan-500 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan-400">Virtual Server</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-green-400 font-bold">✓</span>
+                            <span class="text-gray-300">Biaya lebih efisien</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-green-400 font-bold">✓</span>
+                            <span class="text-gray-300">Mudah untuk scaling</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-green-400 font-bold">✓</span>
+                            <span class="text-gray-300">Backup dan recovery cepat</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-red-400 font-bold">✗</span>
+                            <span class="text-gray-300">Resource sharing dengan VM lain</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <span class="text-red-400 font-bold">✗</span>
+                            <span class="text-gray-300">Ketergantungan pada hypervisor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Administrasi Server -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide5">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Konsep Dasar Administrasi Layanan Server</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="comparison-card rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-blue-300">Monitoring & Maintenance</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Pemantauan performa server</li>
+                            <li>• Update sistem operasi</li>
+                            <li>• Patch keamanan</li>
+                            <li>• Log analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-green-300">Security Management</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Firewall configuration</li>
+                            <li>• User access control</li>
+                            <li>• SSL certificate</li>
+                            <li>• Intrusion detection</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="comparison-card rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-purple-300">Backup & Recovery</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Automated backup schedule</li>
+                            <li>• Data redundancy</li>
+                            <li>• Disaster recovery plan</li>
+                            <li>• Testing restore procedures</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="comparison-card rounded-xl p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-bold text-orange-300">Performance Optimization</h3>
+                        </div>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>• Resource allocation</li>
+                            <li>• Load balancing</li>
+                            <li>• Caching strategies</li>
+                            <li>• Database optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 6: Langkah Memilih Server -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide6">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Langkah Memilih Layanan Server</h2>
+            <div class="space-y-8">
+                <div class="flex items-center space-x-6">
+                    <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-2xl font-bold">1</div>
+                    <div class="comparison-card rounded-xl p-6 flex-1">
+                        <h3 class="text-xl font-bold text-blue-300 mb-2">Analisis Kebutuhan</h3>
+                        <p class="text-gray-300">Tentukan traffic, storage, bandwidth, dan aplikasi yang akan dijalankan</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-2xl font-bold">2</div>
+                    <div class="comparison-card rounded-xl p-6 flex-1">
+                        <h3 class="text-xl font-bold text-green-300 mb-2">Budget Planning</h3>
+                        <p class="text-gray-300">Sesuaikan pilihan dengan anggaran yang tersedia dan proyeksi pertumbuhan</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center text-2xl font-bold">3</div>
+                    <div class="comparison-card rounded-xl p-6 flex-1">
+                        <h3 class="text-xl font-bold text-purple-300 mb-2">Evaluasi Provider</h3>
+                        <p class="text-gray-300">Bandingkan reputasi, uptime, support, dan lokasi data center</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center text-2xl font-bold">4</div>
+                    <div class="comparison-card rounded-xl p-6 flex-1">
+                        <h3 class="text-xl font-bold text-orange-300 mb-2">Testing & Migration</h3>
+                        <p class="text-gray-300">Lakukan testing performa dan rencanakan migrasi data dengan aman</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Manfaat dan Tantangan -->
+    <div class="slide bg-gray-900 flex items-center justify-center pt-20" id="slide7">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400">Manfaat & Tantangan Layanan Hosting/Server</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="comparison-card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-green-400 mb-6 text-center">✓ Manfaat</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-300">Skalabilitas</h4>
+                                <p class="text-gray-300 text-sm">Mudah menambah resource sesuai kebutuhan</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-300">Efisiensi Biaya</h4>
+                                <p class="text-gray-300 text-sm">Tidak perlu investasi hardware besar</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-300">Keandalan</h4>
+                                <p class="text-gray-300 text-sm">Uptime tinggi dengan redundancy</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">✓</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-300">Support Teknis</h4>
+                                <p class="text-gray-300 text-sm">Tim ahli siap membantu 24/7</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comparison-card rounded-2xl p-8">
+                    <h3 class="text-2xl font-bold text-red-400 mb-6 text-center">⚠ Tantangan</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">!</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-300">Ketergantungan Internet</h4>
+                                <p class="text-gray-300 text-sm">Memerlukan koneksi stabil untuk akses</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">!</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-300">Keamanan Data</h4>
+                                <p class="text-gray-300 text-sm">Risiko keamanan dari pihak ketiga</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">!</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-300">Vendor Lock-in</h4>
+                                <p class="text-gray-300 text-sm">Sulit migrasi antar provider</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center mt-1">
+                                <span class="text-white text-xs">!</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-300">Kompleksitas Teknis</h4>
+                                <p class="text-gray-300 text-sm">Memerlukan keahlian administrasi</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Kesimpulan -->
+    <div class="slide gradient-bg tech-pattern flex items-center justify-center" id="slide8">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="float-animation mb-8">
+                <svg class="w-20 h-20 mx-auto text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+            </div>
+            <h2 class="text-4xl font-bold mb-8 text-white">Kesimpulan & Ringkasan</h2>
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                <div class="comparison-card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-blue-300 mb-4">Key Takeaways</h3>
+                    <ul class="text-left text-gray-300 space-y-2">
+                        <li>• Pilih layanan sesuai kebutuhan dan budget</li>
+                        <li>• Virtual server lebih fleksibel dan ekonomis</li>
+                        <li>• Administrasi server memerlukan keahlian khusus</li>
+                        <li>• Pertimbangkan faktor keamanan dan skalabilitas</li>
+                    </ul>
+                </div>
+                <div class="comparison-card rounded-2xl p-6">
+                    <h3 class="text-xl font-bold text-green-300 mb-4">Rekomendasi</h3>
+                    <ul class="text-left text-gray-300 space-y-2">
+                        <li>• Mulai dengan shared hosting untuk pemula</li>
+                        <li>• Upgrade ke VPS saat traffic meningkat</li>
+                        <li>• Investasi dalam backup dan monitoring</li>
+                        <li>• Pilih provider dengan support berkualitas</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pulse-glow bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                <p class="text-xl text-blue-100">Thank you so much!</p>
+                <p class="text-lg text-gray-300 mt-2">ADAKAH YANG MAU DITANYAKAN...????</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            document.getElementById(`slide${n}`).classList.add('active');
+            document.getElementById('slideCounter').textContent = `${n} / ${totalSlides}`;
+            currentSlide = n;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                showSlide(currentSlide + 1);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                showSlide(currentSlide - 1);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize
+        showSlide(1);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'986f9b5af2a77ae1',t:'MTc1OTE5MjE3Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
